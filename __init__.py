@@ -41,10 +41,6 @@ if module == "setCredentials":
     redirect_uri = GetParams("redirect_uri")
     auth_code = GetParams("auth_code")
     try:
-        auth_code = "Y1ELvZruTwQQyXUoP5__v_iB2JfzmNmGn0lh5XnzsuI"
-        client_secret = "Cica0GPtUrMO33S1ORzNxrofCA1hxWnRbj9K1ot6q_U"
-        client_id = "a33ce1f3-95bf-4fe5-b37a-f9085a7cc867"
-        redirect_uri = "http://localhost:5001"
         genesys = GenesysCloud(client_id, client_secret, auth_code, redirect_uri)
         api_client = genesys.authorize(cur_path)
     except Exception as e:
