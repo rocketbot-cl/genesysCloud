@@ -138,7 +138,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 # Examples and tests
-libs/genesys.py
 libs/test.py
 libs/data.json
 libs/default.json
