@@ -70,6 +70,28 @@ if module == "getAllConversations":
         PrintException()
         raise e
 
+if module == "getAllCalls":
+    import json
+    result = GetParams("result")
+    try:
+        api_url = api_client.host
+        endpoint = "/api/v2/conversations/calls"
+        auth_string = 'Bearer ' + api_client.access_token
+        header_params = {
+            "Authorization": auth_string,
+            'Content-Type': 'application/json'
+        }
+        conversation = api_client.request("GET", api_url + endpoint, headers=header_params)
+        conversation_ids = []
+        entities = json.loads(conversation.data)
+        for conversation in entities['entities']:
+            conversation_ids.append(conversation['id'])
+        SetVar(result, conversation_ids)
+    except Exception as e:
+        print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
+        PrintException()
+        raise e
+
 if module == "getConversationByID":
     import json
     result = GetParams("result")
@@ -89,3 +111,44 @@ if module == "getConversationByID":
         print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
         PrintException()
         raise e
+
+if module == "getCallByID":
+    import json
+    result = GetParams("result")
+    id = GetParams("id")
+    try:
+        api_url = api_client.host
+        endpoint = "/api/v2/conversations/call/{id}".format(id=id)
+        auth_string = 'Bearer ' + api_client.access_token
+        header_params = {
+            "Authorization": auth_string,
+            'Content-Type': 'application/json'
+        }
+        conversation = api_client.request("GET", api_url + endpoint, headers=header_params)
+        data_conversation = json.loads(conversation.data)
+        SetVar(result, data_conversation)
+    except Exception as e:
+        print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
+        PrintException()
+        raise e
+
+if module == "call_history":
+    var = GetParams("var")
+    try:
+        api_url = api_client.host
+        endpoint = "/api/v2/conversations/calls/history"
+        auth_string = 'Bearer ' + api_client.access_token
+        header_params = {
+            "Authorization": auth_string,
+            'Content-Type': 'application/json'
+        }
+        conversation = api_client.request("GET", api_url + endpoint, headers=header_params)
+        data_conversation = json.loads(conversation.data)
+        SetVar(var, data_conversation)
+        #call_ids = [call["id"] for call in resp["entities"]]
+        #SetVar(var,call_ids)
+    except Exception as e:
+        print("\x1B[" + "31;40mError\x1B[" + "0m")
+        PrintException()
+        raise e
+
