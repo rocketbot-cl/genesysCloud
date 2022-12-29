@@ -1,10 +1,10 @@
 {
   "author": "Danilo Toro y Nicolas Liendro",
-  "description": "Working with Genesys Cloud functionality",
+  "description": "Module to work with Genesys Cloud functionalities",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "1.0",
+  "version": "1.0.1",
   "license": "MIT",
-  "homepage": "http://rocketbot.co/",
+  "homepage": "http://rocketbot.com/",
   "linux": true,
   "windows": true,
   "mac": true,
@@ -41,9 +41,9 @@
               "es": "client_id:",
               "en": "client_id:"
             },
-            "help": {
-              "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}"
+            "description": {
+              "es": "client_id de la API de genesysCloud",
+              "en": "client_id of the genesysCloud API"
             },
             "id": "client_id",
             "css": "col-md-12"
@@ -55,9 +55,9 @@
               "es": "client_secret:",
               "en": "client_secret:"
             },
-            "help": {
-              "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}"
+            "description": {
+                "es": "client_secret de la API de genesysCloud",
+                "en": "client_secret of the genesysCloud API"
             },
             "id": "client_secret",
             "css": "col-md-12"
@@ -69,9 +69,9 @@
               "es": "redirect_uri",
               "en": "redirect_uri"
             },
-            "help": {
-              "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}"
+            "description": {
+              "es": "redirect_uri de genesysCloud",
+              "en": "redirect_uri of genesysCloud "
             },
             "id": "redirect_uri",
             "css": "col-md-12"
@@ -83,9 +83,9 @@
               "es": "auth code",
               "en": "auth code"
             },
-            "help": {
-              "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}"
+            "description": {
+              "es": "auth code de genesysCloud",
+              "en": "auth code of genesysCloud"
             },
             "id": "auth_code",
             "css": "col-md-12"
@@ -127,6 +127,10 @@
             "title": {
               "es": "Resultado",
               "en": "Result"
+            },
+            "description": {
+              "es": "Variable donde se almacenará el resultado",
+              "en": "Variable where the result will be stored"
             },
             "help": {
               "es": "Nombre de variable sin {}",
@@ -173,6 +177,10 @@
               "es": "Resultado",
               "en": "Result"
             },
+            "description": {
+              "es": "Variable donde se guardará el resultado",
+              "en": "Variable where the result will be saved"
+            },
             "help": {
               "es": "Nombre de variable sin {}",
               "en": "Variable name without {}"
@@ -218,9 +226,9 @@
               "es": "ID",
               "en": "ID"
             },
-            "help": {
-              "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}"
+            "description": {
+              "es": "ID de la conversacion",
+              "en": "Conversation ID"
             },
             "id": "id",
             "css": "col-md-12"
@@ -231,6 +239,10 @@
             "title": {
               "es": "Resultado",
               "en": "Result"
+            },
+            "description": {
+              "es": "Variable donde se guardara el resultado",
+              "en": "Variable where the result will be saved"
             },
             "help": {
               "es": "Nombre de variable sin {}",
@@ -277,9 +289,9 @@
               "es": "ID",
               "en": "ID"
             },
-            "help": {
-              "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}"
+            "description": {
+              "es": "ID de la llamada",
+              "en": "Call ID"
             },
             "id": "id",
             "css": "col-md-12"
@@ -290,6 +302,10 @@
             "title": {
               "es": "Resultado",
               "en": "Result"
+            },
+            "description": {
+                "es": "Variable donde se guardará el resultado",
+                "en": "Variable where the result will be saved"
             },
             "help": {
               "es": "Nombre de variable sin {}",
@@ -316,14 +332,13 @@
     {
       "en": {
         "title": "Call History",
-        "description": " ",
+        "description": "Get all calls in history",
         "title_options": null,
         "options": null
       },
       "es": {
-        "title": " ",
-        "description": " ",
-
+        "title": "Historial de llamadas",
+        "description": "Obtiene todas las llamadas del historial",
         "title_options": null,
         "options": null
       },
@@ -333,12 +348,16 @@
           {
             "type": "input",
             "placeholder": {
-              "es": " ",
-              "en": " "
+              "es": "result",
+              "en": "result"
             },
             "title": {
-              "es": "Variable:",
-              "en": "Variable:"
+              "es": "Resultado:",
+              "en": "Result:"
+            },
+            "description": {
+              "es": "Nombre de la variable donde almacenará el resultado",
+              "en": "Variable to store the result"
             },
             "help": {
               "es": "Nombre de la variable donde almacenará el resultado. No debe tener llaves {}",
